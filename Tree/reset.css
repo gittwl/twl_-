@@ -1,0 +1,88 @@
+input[type="checkbox"]:checked {
+  box-shadow: 0 0 0 3px hotpink;
+  border:hotpink ;
+}
+:root {
+  --dark: #24d3d3;
+}
+/* input[type="checkbox"]{
+  display: none;
+} */
+label {
+  display: flex;
+  align-items: center;
+  grid-gap: 16px;
+  cursor: pointer;
+}
+label .checkbox {
+  width: 20px;
+  height: 20px;
+  background: #ccc;
+  border-radius: 4px;
+  position: relative;
+  transition: .2s ease;
+  transition-delay: .2s;
+}
+label .checkbox::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #fff;
+  border-radius: 2.5px;
+  transition: .2s ease;
+  transition-delay: .2s;
+}
+input:checked + label .checkbox::before {
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 50%;
+  transition-delay: 0s;
+}
+input:checked + label .checkbox {
+  background:#24d3d3;
+  transition-delay: 0s;
+}
+label .checkbox .check {
+  display: block;
+  width: 12px;
+  height: 6px;
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%) rotateZ(-45deg);
+}
+label .checkbox .check::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 0;
+  background: #fff;
+  transition: .2s ease;
+  transition-delay: .2s;
+}
+label .checkbox .check::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: .2s ease;
+  transition-delay: 0s;
+}
+input:checked + label .checkbox .check::before {
+  height: 100%;
+  transition-delay: .2s;
+}
+input:checked + label .checkbox .check::after {
+  width: 100%;
+  transition-delay: .4s;
+}
